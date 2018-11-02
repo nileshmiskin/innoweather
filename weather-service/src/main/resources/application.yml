@@ -1,6 +1,6 @@
 app:
   openweathermap:
-    app-id: 1b55b8c3dedf7720f24279a6f5468ece
+    app-id: <OpenWeatherMap API Key here>
     forecast-endpoint: https://api.openweathermap.org/data/2.5/forecast?APPID=%s
 
 logging:

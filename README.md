@@ -18,7 +18,8 @@ The service uses "America/Chicago" time zone.
 ```
 git clone https://github.com/nileshmiskin/innoweather.git
 ```
-
+- Get a key for OpenWeatherMap. Refer [this article](https://openweathermap.org/appid).
+Add your API key to [application.yml](weather-service/src/main/resources/application.yml) 
 - Generate files for IntelliJ
 ```
 gradlew cleanIdea idea
