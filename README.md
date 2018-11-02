@@ -12,6 +12,9 @@
 
 ### Steps to build
 - Clone the project
+```
+git clone https://github.com/nileshmiskin/innoweather.git
+```
 
 - Generate files for IntelliJ
 ```
@@ -21,30 +24,34 @@ gradlew cleanIdea idea
 ```
 gradlew cleanEclipse eclipse
 ```
+#### The weather service
 - Build the project
 ```
 gradlew clean weather-service:build
 ```
-
 - Code coverage report
 
 Code coverage reports will be produced under weather-service/build/jacocoHtml directory
 ```
 gradlew weather-service:test weather-service:jacocoTestReport
 ```
-Then start the weather service
+- Then start the weather service
 ```
 gradlew weather-service:bootRun
 ```
-Build the sample application
+Swagger API documentation is available [here](http://localhost:8080/swagger-ui.html).
+#### The sample application
+- Build the sample application
 ```
 gradlew sample-app:build
 ```
-Run the sample application
+- Run the sample application
 ```
 java -jar sample-app\build\libs\innoweather-sample-app-1.0.0.jar com.innoweather.sample.Application
 ```
-Run functional tests.
+
+#### Functional tests
+- Run functional tests.
 
 Ensure that weather-service is started before running functional tests.
 Functional test reports will be produced under functional-tests/build/spock-reports directory
