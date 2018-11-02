@@ -39,6 +39,10 @@ gradlew weather-service:test weather-service:jacocoTestReport
 ```
 gradlew weather-service:bootRun
 ```
+Alternatively, you can also use
+```
+gradlew bootRun
+```
 Swagger API documentation is available [here](http://localhost:8080/swagger-ui.html).
 #### The sample application
 - Build the sample application
@@ -56,7 +60,7 @@ java -jar sample-app\build\libs\innoweather-sample-app-1.0.0.jar com.innoweather
 Ensure that weather-service is started before running functional tests.
 Functional test reports will be produced under functional-tests/build/spock-reports directory
 ```
-gradlew functional-tests:test
+gradlew -Denable.fts=true functional-tests:test
 ```
 ### Contact
 nileshmiskin@gmail.com

@@ -1,12 +1,11 @@
 package com.innoweather.sample;
 
-import lombok.Value;
+import lombok.Data;
 
-import java.time.LocalDate;
 import java.util.List;
 
-@Value
+@Data
 public class Forecast {
-    private LocalDate date;
+    private String date;
     private List<Integer> coolestHoursOfTheDay;
 }
