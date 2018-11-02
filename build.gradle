@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = "2.1.0.RELEASE"
+    }
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+ext.projectVersion = '1.0.0'
+
+task wrapper(type: Wrapper) {
+    gradleVersion '4.8'
+}
+
+allprojects {
+    group = "com.innoweather.platform"
+    version = "1.0.0"
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+        jcenter()
+    }
+    ext.sourceCompatibility = 1.8
+    ext.targetCompatibility = 1.8
+}

@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+    }
+}
+
+apply plugin: "java"
+apply plugin: "groovy"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: "org.springframework.boot"
+apply plugin: "io.spring.dependency-management"
+
+bootJar {
+    baseName 'innoweather-sample-app'
+    version '1.0.0'
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework:spring-web"
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    //compile "org.springframework.retry:spring-retry:1.1.5.RELEASE"
+    //compile "org.apache.httpcomponents:httpclient:4.5.2"
+    testCompile "org.spockframework:spock-core:1.2-groovy-2.4"
+    testCompile "org.objenesis:objenesis:1.4"
+}

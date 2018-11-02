@@ -1,0 +1,11 @@
+app:
+  openweathermap:
+    app-id: 1b55b8c3dedf7720f24279a6f5468ece
+    forecast-endpoint: https://api.openweathermap.org/data/2.5/forecast?APPID=%s
+
+logging:
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %X{correlationId} %logger.%M - %msg%n"
+  level:
+    root: info
+    com.innoweather.platform: debug

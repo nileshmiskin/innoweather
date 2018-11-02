@@ -1,0 +1,3 @@
+rootProject.name = 'innoweather'
+include 'weather-service'
+include 'sample-app'
