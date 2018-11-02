@@ -18,7 +18,7 @@ public class WeatherExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Object> handleValidationException(ConstraintViolationException ex) {
-        logger.debug("Validation Exception {}", ex.getStackTrace());
+        logger.debug("Validation Exception {}", new Object[]{ex.getStackTrace()});
         return new ResponseEntity<>(new ErrorResponse("VALIDATION_ERROR", ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 
@@ -30,7 +30,7 @@ public class WeatherExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Throwable.class)
     public ResponseEntity<ErrorResponse> handleApplicationError(Throwable ex) {
-        logger.debug("Exception {}", ex.getStackTrace());
+        logger.debug("Exception {}", new Object[]{ex.getStackTrace()});
         return new ResponseEntity<>(new ErrorResponse("SERVER_ERROR", ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

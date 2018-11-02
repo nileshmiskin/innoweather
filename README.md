@@ -1,5 +1,7 @@
 # Innoweather - Weather API consumption demo
 
+[![Build Status](https://travis-ci.org/nileshmiskin/innoweather.svg?branch=master)](https://travis-ci.org/nileshmiskin/innoweather) [![Coverage Status](https://coveralls.io/repos/github/nileshmiskin/innoweather/badge.svg?branch=master)](https://coveralls.io/github/nileshmiskin/innoweather?branch=master)
+
 ##### Innoweather exposes a ReST service that wraps the Open weather map API and forcasts tomorrow's weather, also reporting coolest hour of the day.
 The service uses "America/Chicago" time zone.
 

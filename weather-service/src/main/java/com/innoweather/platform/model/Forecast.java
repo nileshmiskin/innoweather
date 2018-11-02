@@ -22,7 +22,7 @@ public class Forecast {
                 .collect(Collectors.groupingBy(TemperatureByHour::getTempInFahrenheit));
 
         Map.Entry<Double, List<TemperatureByHour>> min = Collections.min(tempHoursGroupedByTemp.entrySet(), Comparator.comparing(Map.Entry::getKey));
-        List<Integer> hours = min.getValue().stream().map(tempHour -> tempHour.getHour()).collect(Collectors.toList());
+        List<Integer> hours = min.getValue().stream().map(TemperatureByHour::getHour).collect(Collectors.toList());
         return hours;
     }
 }
