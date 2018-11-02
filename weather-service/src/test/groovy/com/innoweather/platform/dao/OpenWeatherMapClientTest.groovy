@@ -34,4 +34,5 @@ class OpenWeatherMapClientTest extends Specification {
         then:
         !forecast
     }
+
 }
