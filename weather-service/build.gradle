@@ -12,6 +12,10 @@ buildscript {
     }
 }
 
+plugins {
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
 apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "idea"
@@ -38,8 +42,8 @@ jacoco {
 
 jacocoTestReport {
     reports {
-        xml.enabled false
-        csv.enabled true
+        xml.enabled = true
+        html.enabled = true
         html.destination file("${buildDir}/jacocoHtml")
     }
     afterEvaluate {
@@ -47,6 +51,10 @@ jacocoTestReport {
             fileTree(dir: it, exclude: ['com/innoweather/platform/config/**', 'com/innoweather/platform/logging/**', 'com/innoweather/platform/Application*'])
         })
     }
+}
+
+coveralls {
+    jacocoReportPath "${buildDir}/reports/jacoco/test/jacocoTestReport.xml"
 }
 
 
