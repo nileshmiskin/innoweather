@@ -1,6 +1,7 @@
 # Innoweather - Weather API consumption demo
 
 ##### Innoweather exposes a ReST service that wraps the Open weather map API and forcasts tomorrow's weather, also reporting coolest hour of the day.
+The service uses "America/Chicago" time zone.
 
 ### Build pre-requisites
 - JDK: Java 1.8

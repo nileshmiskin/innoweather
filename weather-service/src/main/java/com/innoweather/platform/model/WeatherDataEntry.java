@@ -16,11 +16,11 @@ public class WeatherDataEntry {
     private TemperatureEntry temperatureEntry;
 
     public LocalDate getDate() {
-        return Instant.ofEpochSecond(epoch).atZone(ZoneId.systemDefault()).toLocalDate();
+        return Instant.ofEpochSecond(epoch).atZone(ZoneId.of("America/Chicago")).toLocalDate();
     }
 
     public Integer getHour() {
-        LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(epoch), ZoneId.systemDefault());
+        LocalDateTime dateTime = LocalDateTime.ofInstant(Instant.ofEpochSecond(epoch), ZoneId.of("America/Chicago"));
         return dateTime.getHour();
     }
 }

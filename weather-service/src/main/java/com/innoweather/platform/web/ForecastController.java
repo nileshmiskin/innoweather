@@ -32,7 +32,7 @@ public class ForecastController {
     @ApiOperation(value = "Get tomorrow's forecast", notes = "Fetches tomorrow's predicted temperatures and reports coolest hour of the day.")
     public Forecast getForecast(@RequestParam(value = "zipCode") @Pattern(regexp = "^[0-9]{5}$", message = "must be valid 5 digit zip code")
                                     @ApiParam(value = "zip code of a city in US", example = "84044", required = true) String zipCode) {
-        LocalDate tomorrow = LocalDate.now(ZoneId.systemDefault()).plusDays(1);
+        LocalDate tomorrow = LocalDate.now(ZoneId.of("America/Chicago")).plusDays(1);
         Forecast forecast = weatherService.getWeatherForecast(tomorrow, zipCode);
         return forecast;
     }

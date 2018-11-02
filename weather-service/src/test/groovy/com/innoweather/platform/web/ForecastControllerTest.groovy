@@ -4,6 +4,7 @@ import com.innoweather.platform.service.WeatherService
 import spock.lang.Specification
 
 import java.time.LocalDate
+import java.time.ZoneId
 
 class ForecastControllerTest extends Specification {
 
@@ -11,7 +12,7 @@ class ForecastControllerTest extends Specification {
         given:
         WeatherService weatherService = Mock(WeatherService)
         ForecastController controller = new ForecastController(weatherService)
-        LocalDate tomorrow = LocalDate.now().plusDays(1)
+        LocalDate tomorrow = LocalDate.now(ZoneId.of("America/Chicago")).plusDays(1)
         when:
         controller.getForecast("12345")
         then:

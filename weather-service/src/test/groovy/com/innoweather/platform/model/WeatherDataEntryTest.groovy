@@ -11,6 +11,6 @@ class WeatherDataEntryTest extends Specification {
         WeatherDataEntry entry = new WeatherDataEntry(epoch: 1541157389L, temperatureEntry: new TemperatureEntry(tempInFahrenheit: 279.0D))
         then: "Ensure date and hour are calculated correctly"
         entry.date == LocalDate.of(2018, 11, 2)
-        entry.hour == 16
+        entry.hour == 6
     }
 }

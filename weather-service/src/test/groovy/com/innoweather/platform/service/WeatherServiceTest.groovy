@@ -26,7 +26,7 @@ class WeatherServiceTest extends Specification {
         then:
         forecast.date == foreCastDate
         forecast.hourWiseTemperatures.size() == 1
-        forecast.coolestHoursOfTheDay == [16]
+        forecast.coolestHoursOfTheDay == [6]
     }
 
     @Unroll

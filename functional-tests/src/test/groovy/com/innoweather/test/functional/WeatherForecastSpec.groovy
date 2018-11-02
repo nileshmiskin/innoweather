@@ -1,13 +1,14 @@
 package com.innoweather.test.functional
 
 import java.time.LocalDate
+import java.time.ZoneId
 
 class WeatherForecastSpec extends AppSpec {
 
     def "It should fetch weather forcast for tomorrow and report coolest hour" (){
         given: "A zipcode of a US city"
         def zipCode = "84044"
-        def tomorrow = LocalDate.now().plusDays(1)
+        def tomorrow = LocalDate.now(ZoneId.of("America/Chicago")).plusDays(1)
         when: "I call the weather API"
         def response = http.get(path: "/forecast", query: ["zipCode": zipCode])
         then: "It should return a forecast for tomorrow along with coolest hour of the day"
